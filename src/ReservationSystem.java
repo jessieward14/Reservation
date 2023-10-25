@@ -27,6 +27,7 @@ public class ReservationSystem {
 //            reservations[x].print();
 //        }
         addReservation(5, 7.0, 3, "Steve", 5);
+        selectionSort();
     }
 
 
@@ -52,9 +53,62 @@ public class ReservationSystem {
             if (reservations[x] == null) {
                 System.out.println("empty");
 
-            }else{
-                System.out.println(reservations);
+            } else {
+                reservations[x].print();
             }
         }
+    }
+
+    public void selectionSort() {
+        int[] waffles = new int[10];
+
+        for (int i = 0; i < waffles.length; i++) {
+            waffles[i] = (int) (Math.random() * 100);
+            System.out.print(waffles[i] + ", ");
+        }
+        System.out.println();
+
+        //start of selectionSort();
+        //find the min
+        int n = waffles.length;
+        for (int k = 0; k < n - 1; k++) {
+            int minIndex = k;
+            for (int v = k + 1; v < n; v++) {
+                if (waffles[v] < waffles[minIndex]) {
+                    minIndex = v;
+                }
+            }
+
+            //swap indexs
+            int temp = waffles[minIndex];
+            waffles[minIndex] = waffles[k];
+            waffles[k] = temp;
+        }
+        for (int i = 0; i < waffles.length; i++) {
+            System.out.print(waffles[i] + ", ");
+        }
+        System.out.println();
+
+    }
+
+
+
+    public void sortReservationsByPriority(){
+        Reservation filler = new Reservation(0,0,0,0,0);
+        for(int v= 0; v< reservations.length - 1; v++){
+            if{reservations[v].priority > reservations[v+1].priority){
+                filler = reservations[v+1];
+
+            }
+
+            for(int j= 0; j< reservations.length; j++){
+                if(reservations[j] != null){
+                    reservations[j].priority = j;
+
+                }
+            }
+        }
+    }
+
     }
 }
