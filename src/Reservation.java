@@ -8,21 +8,22 @@ public class Reservation {
      int tableNumber;
      public String name;
 
-     public int priority;
+     public long priority;
+     public long timeMade;
 
      //helpful for finding current time
     // System.currentTimeMillis();
 
-    public Reservation(int nnumPeople, double ttime, int ppriority, String nname, int ttableNumber) {
+    public Reservation(int nnumPeople, double ttime, long ppriority, String nname, long ttimeMade) {
         numPeople = nnumPeople;
         time = ttime;
         name = nname;
         priority = ppriority;
-        tableNumber = ttableNumber;
+        timeMade = ttimeMade;
     }
         public void print(){
 
-        System.out.println (name + " booked a reservation for " + numPeople + " people at " + time + " o'clock for table " + tableNumber +"." );
+        System.out.println (name + " booked a reservation at " +timeMade + " for " + numPeople + " people at " + time + " o'clock.");
 
     }
 
